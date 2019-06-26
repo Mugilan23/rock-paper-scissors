@@ -1,8 +1,27 @@
-<html>
-  <head>
+<!DOCTYPE html>
+
+<head>
     <title>Rock-Paper-Scissors</title>
-  </head>
-  <body>
-    <script></script>
-  </body>
+</head>
+
+<body>
+
+    <script>
+
+        let selection = ["rock", "paper", "scissors"];
+
+        function computerPlay() {
+            let computerChoice = selection[Math.floor(Math.random() * selection.length)];
+            return computerChoice;
+        }
+
+        console.log(computerPlay());
+        console.log(computerPlay());
+        console.log(computerPlay());
+        console.log(computerPlay());
+
+    </script>
+
+</body>
+
 </html>
