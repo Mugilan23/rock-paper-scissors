@@ -56,6 +56,6 @@ function game(gameLength) {
 	}
 }
 
-let gameLength = Number(prompt('Enter the Winning Score'));
+let gameLength = Number(prompt('Enter the Winning Score', 5));
 
 game(gameLength);
