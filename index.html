@@ -2,22 +2,41 @@
 
 <head>
 	<title>Rock-Paper-Scissors</title>
+	<!-- <link href="https://fonts.googleapis.com/css?family=Bahianita&display=swap" rel="stylesheet"> -->
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<h1>Open up Console to Play</h1>
+	<header>
+		<h1>Rock Paper Scissors</h1>
+		<link rel="stylesheet" href="style.css">
+	</header>
 
-	<div id="chosen">
-		<div id="player-choice">NULL</div>
-		<div id="computer-choice">NULL</div>
+	<div id="score-board">
+		<div id="user-label" class="badge">user</div>
+		<div id="computer-label" class="badge">comp</div>
+		<span id="user-score">0</span>:<span id="computer-score">0</span>
 	</div>
 
-	<div id="playing-choices"></div>
+	<div id="result">
+		<p>You Win! Rock cuts through Paper</p>
+	</div>
 
-	<div id="result-div">
-		<div>Player: <span id="player-score">0</span></div>
-		<div>Computer: <span id="computer-score">0</span></div>
-		<div id='message'>Draw</div>
+	<div id="choices">
+		<div class="choice" id="r">
+			<img src="images/rock.png" alt="rock">
+		</div>
+		<div class="choice" id="p">
+			<img src="images/paper.png" alt="paper">
+		</div>
+		<div class="choice" id="s">
+			<img src="images/scissors.png" alt="scissors">
+		</div>
+	</div>
+
+	<div id="action-message">
+		<div id="target-score">First to score <span id="win-score">5</span> points wins</div>
+		<div id="round">Round <span id="round-no">1</span></div>
 	</div>
 
 	<script src="app.js"></script>

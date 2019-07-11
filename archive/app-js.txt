@@ -59,3 +59,12 @@ function game(gameLength) {
 let gameLength = Number(prompt('Enter the Winning Score', 5));
 
 game(gameLength);
+
+
+// creates new buttons based off options
+let optionsDiv = document.getElementById('playing-choices');
+options.forEach((option) => {
+	let newBtn = document.createElement('button');
+	newBtn.innerText = option;
+	optionsDiv.append(newBtn);
+});
