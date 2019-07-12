@@ -5,6 +5,7 @@ let roundNumber = 0;
 const userScore_span = document.getElementById('user-score');
 const computerScore_span = document.getElementById('computer-score');
 const result_p = document.querySelector('#result > p');
+const finalResult_p = document.querySelector('#result > p:nth-child(2)');
 const rock_div = document.getElementById('r');
 const paper_div = document.getElementById('p');
 const scissors_div = document.getElementById('s');
@@ -16,6 +17,12 @@ function updateScreen() {
 	userScore_span.innerHTML = userScore;
 	computerScore_span.innerHTML = computerScore;
 	roundNo_span.innerHTML = roundNumber;
+}
+
+function displayResult(winner) {
+	result_p.classList.add('hide');
+	finalResult_p.classList.remove('hide');
+	finalResult_p.textContent = `${winner} Wins!`;
 }
 
 function convertToWord(letter) {
@@ -49,12 +56,14 @@ function win(userChoice, computerChoice) {
 	let action = getResultAction(userChoice, computerChoice);
 	userScore++;
 	result_p.innerHTML = `You Win! ${convertToWord(userChoice)} ${action} ${convertToWord(computerChoice)}`;
+	if (userScore === winScore) displayResult('User');
 	updateScreen();
 }
 function lose(userChoice, computerChoice) {
 	let action = getResultAction(userChoice, computerChoice);
 	computerScore++;
 	result_p.innerHTML = `You lose! ${convertToWord(computerChoice)} ${action} ${convertToWord(userChoice)}`;
+	if (computerScore === winScore) displayResult('Computer');
 	updateScreen();
 }
 function draw(userChoice, computerChoice) {
@@ -92,16 +101,20 @@ function game(userChoice) {
 	}
 }
 
-function main() {
-	rock_div.addEventListener('click', () => {
-		game('r');
-	});
-	paper_div.addEventListener('click', () => {
-		game('p');
-	});
-	scissors_div.addEventListener('click', () => {
-		game('s');
-	});
+function main(winScore = 5) {
+	winScore_span.textContent = winScore;
+	rock_div.addEventListener('click', () => game('r'));
+	paper_div.addEventListener('click', () => game('p'));
+	scissors_div.addEventListener('click', () => game('s'));
 }
 
-main();
+function begin() {
+	let winScore = Number(prompt('Set the Winning Score', 5));
+	if (winScore < 1 || isNaN(winScore)) {
+		main();
+	} else {
+		main(winScore);
+	}
+}
+
+begin();
