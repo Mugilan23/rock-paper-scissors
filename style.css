@@ -55,6 +55,7 @@ header > h1 {
 #result {
 	font-size: 40px;
 	color: white;
+	margin: 30px;
 }
 
 #result > p {
@@ -89,7 +90,7 @@ header > h1 {
 	text-align: center;
 	color: white;
 	font-size: 35px;
-	margin-top: 20px;
+	margin-top: 40px;
 	font-family: 'Cherry Swash', cursive, sans-serif;
 }
 
@@ -100,3 +101,18 @@ header > h1 {
 #action-message > div > span {
 	font-size: 2.5rem;
 }
+
+/* #win-score {
+	border: 1px solid gray;
+	border-radius: 15px;
+	display: inline-flex;
+}
+#win-score input {
+	max-width: 70px;
+	background: #242830;
+	color: white;
+	margin: 0.25em;
+	border: 0;
+	text-align: center;
+	font-size: 35px;
+} */

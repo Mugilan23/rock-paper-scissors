@@ -1,7 +1,3 @@
-let userScore = 0;
-let computerScore = 0;
-let roundNumber = 0;
-
 const userScore_span = document.getElementById('user-score');
 const computerScore_span = document.getElementById('computer-score');
 const result_p = document.querySelector('#result > p');
@@ -11,6 +7,26 @@ const paper_div = document.getElementById('p');
 const scissors_div = document.getElementById('s');
 const winScore_span = document.getElementById('win-score');
 const roundNo_span = document.getElementById('round-no');
+
+let userScore = 0;
+let computerScore = 0;
+let roundNumber = 0;
+let winScore = Number(winScore_span.textContent);
+
+function reset() {
+	userScore = 0;
+	computerScore = 0;
+	roundNumber = 0;
+	userScore_span.innerHTML = userScore;
+	computerScore_span.innerHTML = computerScore;
+	roundNo_span.innerHTML = roundNumber;
+	result_p.classList.remove('hide');
+	finalResult_p.classList.add('hide');
+	result_p.innerHTML = 'Make a Move';
+	rock_div.style.pointerEvents = 'auto';
+	paper_div.style.pointerEvents = 'auto';
+	scissors_div.style.pointerEvents = 'auto';
+}
 
 function updateScreen() {
 	roundNumber++;
@@ -23,6 +39,10 @@ function displayResult(winner) {
 	result_p.classList.add('hide');
 	finalResult_p.classList.remove('hide');
 	finalResult_p.textContent = `${winner} Wins!`;
+	rock_div.style.pointerEvents = 'none';
+	paper_div.style.pointerEvents = 'none';
+	scissors_div.style.pointerEvents = 'none';
+	setTimeout(reset, 5000);
 }
 
 function convertToWord(letter) {
@@ -101,20 +121,10 @@ function game(userChoice) {
 	}
 }
 
-function main(winScore = 5) {
-	winScore_span.textContent = winScore;
+function main() {
 	rock_div.addEventListener('click', () => game('r'));
 	paper_div.addEventListener('click', () => game('p'));
 	scissors_div.addEventListener('click', () => game('s'));
 }
 
-function begin() {
-	let winScore = Number(prompt('Set the Winning Score', 5));
-	if (winScore < 1 || isNaN(winScore)) {
-		main();
-	} else {
-		main(winScore);
-	}
-}
-
-begin();
+main();
