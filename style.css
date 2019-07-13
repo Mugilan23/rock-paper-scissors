@@ -1,3 +1,9 @@
+:root {
+	--main-color: #242830;
+	--font-color: white;
+	--font-family: 'Cherry Swash', cursive, sans-serif;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,39 +11,39 @@
 }
 
 body {
-	background: #242830;
+	background: var(--main-color);
 }
 
 header {
-	background: white;
+	background: var(--font-color);
 	padding: 20px;
 }
 
 header > h1 {
-	color: #242830;
+	color: var(--main-color);
 	text-align: center;
-	font-family: 'Cherry Swash', cursive, sans-serif;
+	font-family: var(--font-family);
 }
 
 #score-board {
 	margin: 20px auto;
-	border: 3px solid white;
+	border: 3px solid var(--font-color);
 	border-radius: 5px;
 	text-align: center;
 	width: 200px;
-	color: white;
+	color: var(--font-color);
 	font-size: 46px;
 	padding: 15px 20px;
-	font-family: 'Cherry Swash', cursive, sans-serif;
+	font-family: var(--font-family);
 	position: relative;
 }
 
 .badge {
 	background: #e25840;
-	color: white;
+	color: var(--font-color);
 	font-size: 14px;
 	padding: 2px 10px;
-	font-family: 'Cherry Swash', cursive, sans-serif;
+	font-family: var(--font-family);
 }
 
 #user-label {
@@ -54,13 +60,13 @@ header > h1 {
 
 #result {
 	font-size: 40px;
-	color: white;
+	color: var(--font-color);
 	margin: 30px;
 }
 
 #result > p {
 	text-align: center;
-	font-family: 'Cherry Swash', cursive, sans-serif;
+	font-family: var(--font-family);
 	font-weight: bold;
 }
 
@@ -74,7 +80,7 @@ header > h1 {
 }
 
 .choice {
-	border: 4px solid white;
+	border: 4px solid var(--font-color);
 	border-radius: 50%;
 	display: inline-block;
 	padding: 15px;
@@ -88,10 +94,10 @@ header > h1 {
 
 #action-message {
 	text-align: center;
-	color: white;
+	color: var(--font-color);
 	font-size: 35px;
 	margin-top: 40px;
-	font-family: 'Cherry Swash', cursive, sans-serif;
+	font-family: var(--font-family);
 }
 
 #action-message > div {
@@ -109,7 +115,7 @@ header > h1 {
 }
 #win-score input {
 	max-width: 70px;
-	background: #242830;
+	background: var(--main-color);
 	color: white;
 	margin: 0.25em;
 	border: 0;
