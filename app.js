@@ -17,9 +17,7 @@ function reset() {
 	userScore = 0;
 	computerScore = 0;
 	roundNumber = 0;
-	userScore_span.innerHTML = userScore;
-	computerScore_span.innerHTML = computerScore;
-	roundNo_span.innerHTML = roundNumber;
+	updateScreen(userScore, computerScore, roundNumber);
 	result_p.classList.remove('hide');
 	finalResult_p.classList.add('hide');
 	result_p.innerHTML = 'Make a Move';
@@ -28,11 +26,11 @@ function reset() {
 	scissors_div.style.pointerEvents = 'auto';
 }
 
-function updateScreen() {
+function updateScreen(uScore = userScore, cScore = computerScore, rNumber = roundNumber) {
 	roundNumber++;
-	userScore_span.innerHTML = userScore;
-	computerScore_span.innerHTML = computerScore;
-	roundNo_span.innerHTML = roundNumber;
+	userScore_span.innerHTML = uScore;
+	computerScore_span.innerHTML = cScore;
+	roundNo_span.innerHTML = rNumber;
 }
 
 function displayResult(winner) {
